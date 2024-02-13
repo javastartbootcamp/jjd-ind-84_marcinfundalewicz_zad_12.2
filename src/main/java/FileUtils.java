@@ -12,10 +12,10 @@ public class FileUtils {
         return new Employee(name, surname, pesel, department, salary);
     }
 
-    public static Employee[] fillTheArrayOfEmployees(String fileName) throws FileNotFoundException {
-        int fileLines = calculateLines(fileName);
+    public static Employee[] fillTheArrayOfEmployees(File file) throws FileNotFoundException {
+        int fileLines = calculateLines(file);
         Employee[] employees = new Employee[fileLines];
-        try (Scanner scanner = new Scanner(new File(fileName))) {
+        try (Scanner scanner = new Scanner(file)) {
             for (int i = 0; i < fileLines; i++) {
                 String csvFileLine = scanner.nextLine();
                 employees[i] = createEmployee(csvFileLine);
@@ -24,9 +24,9 @@ public class FileUtils {
         return employees;
     }
 
-    private static int calculateLines(String fileName) throws FileNotFoundException {
+    private static int calculateLines(File file) throws FileNotFoundException {
         int lines = 0;
-        try (Scanner scanner = new Scanner(new File(fileName))) {
+        try (Scanner scanner = new Scanner(file)) {
             while (scanner.hasNextLine()) {
                 lines++;
                 scanner.nextLine();

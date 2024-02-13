@@ -1,32 +1,32 @@
 public class Employee {
-    private String imie;
-    private String nazwisko;
+    private String name;
+    private String surname;
     private String pesel;
     private String department;
     private int salary;
 
-    public Employee(String imie, String nazwisko, String pesel, String department, int salary) {
-        this.imie = imie;
-        this.nazwisko = nazwisko;
+    public Employee(String name, String surname, String pesel, String department, int salary) {
+        this.name = name;
+        this.surname = surname;
         this.pesel = pesel;
         this.department = department;
         this.salary = salary;
     }
 
-    public String getImie() {
-        return imie;
+    public String getName() {
+        return name;
     }
 
-    public void setImie(String imie) {
-        this.imie = imie;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getNazwisko() {
-        return nazwisko;
+    public String getSurname() {
+        return surname;
     }
 
-    public void setNazwisko(String nazwisko) {
-        this.nazwisko = nazwisko;
+    public void setSurname(String surname) {
+        this.surname = surname;
     }
 
     public String getPesel() {
